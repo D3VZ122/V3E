@@ -2,15 +2,18 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Box from "../components/box";
 import { Task } from "../components/task";
-// import { useNavigate } from "react-router";
-// import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router";
+import { useCookies } from "react-cookie";
 
 export default function Home() {
   const [tasks, setTasks] = useState<Task[]>([]);
-  // const [cookies, , removeCookie] = useCookies();
-  // const navigate = useNavigate();
+   const [cookies] = useCookies();
+  const navigate = useNavigate();
   useEffect(() => {
-  
+     if(!cookies.token){
+      navigate("/");
+     }
+    
     
     const server = import.meta.env.VITE_server_link;
     axios.get(server+"/api/v1/task/tasks",{withCredentials:true}).then((response) => {
@@ -32,7 +35,7 @@ export default function Home() {
       });
       setTasks(updatedTasks);
     });
-  }, []);
+  }, [tasks]);
 
   return (
     <div>

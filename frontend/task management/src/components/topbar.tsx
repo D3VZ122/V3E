@@ -10,10 +10,10 @@ export default function Topbar() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (cookies.token) {
+    if (cookies.isauthenticated==true) {
       setLogin(true);
     }
-  }, [cookies.token, navigate]);
+  }, [cookies.isauthenticated, navigate]);
 
   return (
     <div className="block md:flex justify-between items-center w-full p-4 bg-gray-900 text-white">
@@ -42,6 +42,7 @@ export default function Topbar() {
               onclick={() => {
                 removeCookie("token");
                 removeCookie("name ");
+                removeCookie("isauthenticated");
                 setLogin(false);
                 navigate("/");
               }}

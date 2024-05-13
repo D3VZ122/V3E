@@ -27,7 +27,7 @@ const TaskHome = memo(function TaskHome({ title, due, link, type }: TaskHomeProp
             }
         );
         if (resp) {
-            navigate('/home');
+            navigate('/home', { state: { key: Math.random().toString() } });
         }
     };
 

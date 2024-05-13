@@ -3,6 +3,7 @@ import Button from "./button";
 import LabbeledInputs from "./input";
 import axios from "axios";
 import { useNavigate } from "react-router";
+import { useCookies } from "react-cookie";
 
 interface AuthType {
     type: string;
@@ -17,7 +18,8 @@ interface UserDataType {
 
 
 export default function Auth({ type }: AuthType) {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const [,setcookie] =useCookies();
     const [userData, setUserData] = useState<UserDataType>({
         Email: "",
         name: "",
@@ -30,7 +32,9 @@ export default function Auth({ type }: AuthType) {
                 const resp = await axios.post(server+"/api/v1/user/"+type, userData,{
                     withCredentials:true
                 });
-           if(type=="signin"&&resp){
+                
+           if(type=="signin"&&resp.data.success==true){
+            setcookie("isauthenticated",true);
             navigate("/home");
            }
            else{
