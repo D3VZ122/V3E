@@ -1,31 +1,38 @@
-Task Manager
-Task Manager is a web application that allows users to schedule their tasks. The backend is built with TypeScript and Node.js, utilizing Prisma for database management. The frontend is developed with Vite, React, and TypeScript.
+# Task Manager
 
-Features
-User authentication and authorization
-Task scheduling and management
-Responsive user interface
-Prerequisites
+Task Manager is a web application that simplifies task scheduling and management. The backend is built with TypeScript and Node.js, while the frontend utilizes Vite, React, and TypeScript.
+
+## 🚀 Features
+- **User Authentication**: Secure user authentication and authorization system.
+- **Intuitive Interface**: Intuitive task scheduling and management interface.
+- **Responsive Design**: Responsive design for seamless user experience on all devices.
+
+## LIVE AT
+-**LINK**:<h2>https://v3-e.vercel.app/</h2>
+## ⚙️ Prerequisites
 Before running the application, ensure you have the following installed:
+- [Node.js](https://nodejs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Prisma CLI](https://www.prisma.io/docs/getting-started/installation)
+- [Vite](https://vitejs.dev/)
 
-Node.js
-TypeScript
-Prisma CLI
-Vite
-Installation
-Clone the repository:
+## 🛠️ Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/D3VZ122/V3E.git
 
 
-Copy code
-git clone https://github.com/D3VZ122/V3E.git
-Navigate to the project directory:
+
+## 🛠️ RUN
+**Navigate to the project directory:**
 
 
 cd <project-directory>
 Install dependencies:
 
-
+ ```bash
 npm install
+
 Migrate the database:
 
 
@@ -48,14 +55,18 @@ Run the Node.js server:
 
 
 node index.js
-Frontend
+ ## Frontend
 Navigate to the frontend directory:
+```
 
-
+## 🛠️ FrontEnd 
+**Navigate to the project directory:**
+```bash
 cd frontend
 Start the development server:
 npm run dev
-Access the application at http://localhost:5173.
+```
+Access the application at <h1>http://localhost:5173</h1>
 
 Postman Api Documenation json is present in Backend folder.
 
