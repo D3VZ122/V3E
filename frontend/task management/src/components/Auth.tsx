@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "./button";
 import LabbeledInputs from "./input";
 import axios from "axios";
 import { useNavigate } from "react-router";
-import { useCookies } from "react-cookie";
+import {  useCookies } from "react-cookie";
+import { Link } from "react-router-dom";
 
 interface AuthType {
     type: string;
@@ -19,12 +20,18 @@ interface UserDataType {
 
 export default function Auth({ type }: AuthType) {
     const navigate = useNavigate();
-    const [,setcookie] =useCookies();
+    const [cookie,setcookie] =useCookies();
     const [userData, setUserData] = useState<UserDataType>({
         Email: "",
         name: "",
         password: "",
     }); 
+
+    useEffect(()=>{
+        if(cookie.isauthenticated==true){
+            navigate("/home");
+        }
+    })
     const server = import.meta.env.VITE_server_link
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -44,7 +51,7 @@ export default function Auth({ type }: AuthType) {
         } catch (error:any) {
             console.error("An error occurred:", error);
             if (error.response && error.response.data && error.response.data.message) {
-                // Extract specific error message from response and set error state
+            
                 alert(error.response.data.message);
             } else {
                 alert("An error occurred while processing your request.");
@@ -112,6 +119,12 @@ export default function Auth({ type }: AuthType) {
                                 onclick={()=>{}}
                             />
                         )}
+                        {type === "signin" ? (
+                                <span>Don't have an account? <Link to="/signup">Sign up</Link></span>
+                            ) : (
+                                <span>Already have an account? <Link to="/">Sign in</Link></span>
+                            )}
+
                     </form>
                 </div>
             </div>
