@@ -76,12 +76,12 @@ router.post("/signin",async(req,res)=>{
                 const token = jwt.sign({userid:an.id},secret);
                     res.cookie("token", token, {
              // Prevent client-side JavaScript access
-          
+            secure: true, // Send cookies only over HTTPS
             sameSite: 'none' // Allow cross-site usage
         });
         res.cookie("name", an.name, {
            
-          
+            secure: true,
             sameSite: 'none'
         });
                 return res.json({
