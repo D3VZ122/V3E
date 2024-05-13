@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const app = express();
 app.use(cors({
-    origin: 'https://v3-gagutozyd-d3vzs-projects.vercel.app/',
+    origin: 'https://v3-gagutozyd-d3vzs-projects.vercel.app',
     credentials: true
 }));
 app.use(cookieParser());
