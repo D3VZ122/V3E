@@ -41,7 +41,7 @@ export default function TaskinDetail() {
             <p>{task.status === "DONE" ?  new Date(task.completed_at).toLocaleDateString()+"  "+new Date(task.completed_at).toLocaleTimeString():new Date(task.Due_at).toLocaleDateString()+" " +new Date(task.Due_at).toLocaleTimeString()}</p>
           </div>
           {task.status != "DONE" ? <div>  <div className="flex justify-between">
-            <Button name="Edit" size="large" />
+            <Button name="Edit" size="large" onclick={()=>{}} />
             <Button name="complete" size="large" onclick={async () => {
               const resp = await axios.put(server + "/api/v1/task/tasks/" + id, {
                 status: "DONE"

@@ -1,4 +1,4 @@
-import { Route, Router, Routes } from "react-router";
+import { Route, Routes } from "react-router";
 import { BrowserRouter } from "react-router-dom";
 
 import SigninPage from "./pages/sigin";
