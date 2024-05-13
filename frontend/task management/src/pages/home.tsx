@@ -10,7 +10,7 @@ export default function Home() {
    const [cookies] = useCookies();
   const navigate = useNavigate();
   useEffect(() => {
-     if(!cookies.token){
+     if(!cookies.isauthenticated){
       navigate("/");
      }
     
