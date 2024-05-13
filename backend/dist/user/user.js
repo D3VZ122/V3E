@@ -78,8 +78,16 @@ router.post("/signin", (req, res) => __awaiter(void 0, void 0, void 0, function*
             const secret = process.env.jwt_secret || "";
             if (verifiedpass) {
                 const token = jsonwebtoken_1.default.sign({ userid: an.id }, secret);
-                res.cookie("token", token, { secure: true });
-                res.cookie("name", an.name, { secure: true });
+                res.cookie("token", token, {
+                    httpOnly: true, // Prevent client-side JavaScript access
+                    secure: true, // Send cookies only over HTTPS
+                    sameSite: 'none' // Allow cross-site usage
+                });
+                res.cookie("name", an.name, {
+                    httpOnly: true,
+                    secure: true,
+                    sameSite: 'none'
+                });
                 return res.json({
                     message: "Login SUccessfull",
                     success: true
