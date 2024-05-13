@@ -74,8 +74,8 @@ router.post("/signin",async(req,res)=>{
           
             if(verifiedpass){
                 const token = jwt.sign({userid:an.id},secret);
-                res.cookie("token",token);
-                res.cookie("name",an.name);
+                res.cookie("token", token, { secure: true, httpOnly: true });
+                res.cookie("name", an.name, { secure: true, httpOnly: true });
                 return res.json({
                     message:"Login SUccessfull",
                     success:true
