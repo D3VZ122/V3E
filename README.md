@@ -57,6 +57,8 @@ Start the development server:
 npm run dev
 Access the application at http://localhost:5173.
 
+Postman Api Documenation json is present in Backend folder.
+
 Configuration
 You can configure the backend server and database connection in the .env file. Make sure to create this file in the root directory and add the necessary environment variables.
 
