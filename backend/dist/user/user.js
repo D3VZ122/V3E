@@ -80,11 +80,9 @@ router.post("/signin", (req, res) => __awaiter(void 0, void 0, void 0, function*
                 const token = jsonwebtoken_1.default.sign({ userid: an.id }, secret);
                 res.cookie("token", token, {
                     // Prevent client-side JavaScript access
-                    secure: true, // Send cookies only over HTTPS
                     sameSite: 'none' // Allow cross-site usage
                 });
                 res.cookie("name", an.name, {
-                    secure: true,
                     sameSite: 'none'
                 });
                 return res.json({
