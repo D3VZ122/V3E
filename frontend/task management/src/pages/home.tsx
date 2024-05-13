@@ -10,6 +10,7 @@ export default function Home() {
   const [cookies, , removeCookie] = useCookies();
   const navigate = useNavigate();
   useEffect(() => {
+    console.log(coo);
     if(!cookies.token){
       navigate("/");
     }

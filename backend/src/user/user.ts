@@ -75,12 +75,12 @@ router.post("/signin",async(req,res)=>{
             if(verifiedpass){
                 const token = jwt.sign({userid:an.id},secret);
                     res.cookie("token", token, {
-            httpOnly: true, // Prevent client-side JavaScript access
+             // Prevent client-side JavaScript access
             secure: true, // Send cookies only over HTTPS
             sameSite: 'none' // Allow cross-site usage
         });
         res.cookie("name", an.name, {
-            httpOnly: true,
+           
             secure: true,
             sameSite: 'none'
         });
