@@ -1,0 +1,223 @@
+{
+	"info": {
+		"_postman_id": "fa882477-ad47-42b9-8ac5-61989e91a746",
+		"name": "VE3 API DOCUMENTATION",
+		"description": "Documentation for the API endpoints",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25274804"
+	},
+	"item": [
+		{
+			"name": "User Management",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"John Doe\",\n  \"Email\": \"john@example.com\",\n  \"password\": \"password\"\n}"
+						},
+						"url": {
+							"raw": "https://v3e-task-manager.onrender.com/api/v1/user/signup",
+							"protocol": "https",
+							"host": [
+								"v3e-task-manager",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Signin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"Email\": \"john@example.com\",\n  \"password\": \"password\"\n}"
+						},
+						"url": {
+							"raw": "https://v3e-task-manager.onrender.com/api/v1/user/signin",
+							"protocol": "https",
+							"host": [
+								"v3e-task-manager",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "These Endpoints are Reponsible for the Login and Signup purpose"
+		},
+		{
+			"name": "Task Management",
+			"item": [
+				{
+					"name": "Get All Tasks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://v3e-task-manager.onrender.com/api/v1/task/tasks",
+							"protocol": "https",
+							"host": [
+								"v3e-task-manager",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"task",
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Task",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Task Title\",\n  \"description\": \"Task Description\",\n  \"Due_at\": \"2024-05-14\"\n}"
+						},
+						"url": {
+							"raw": "https://v3e-task-manager.onrender.com/api/v1/task/tasks",
+							"protocol": "https",
+							"host": [
+								"v3e-task-manager",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"task",
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Task by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://v3e-task-manager.onrender.com/api/v1/task/tasks/1",
+							"protocol": "https",
+							"host": [
+								"v3e-task-manager",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"task",
+								"tasks",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Task",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Updated Task Title\",\n  \"description\": \"Updated Task Description\",\n  \"Due_at\": \"2024-05-15\"\n}"
+						},
+						"url": {
+							"raw": "https://v3e-task-manager.onrender.com/api/v1/task/tasks/1",
+							"protocol": "https",
+							"host": [
+								"v3e-task-manager",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"task",
+								"tasks",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Task",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://v3e-task-manager.onrender.com/api/v1/task/tasks/1",
+							"protocol": "https",
+							"host": [
+								"v3e-task-manager",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"task",
+								"tasks",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "These Endpoint are for the Task Related changes or creation"
+		}
+	]
+}
