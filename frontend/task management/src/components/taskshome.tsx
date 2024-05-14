@@ -41,9 +41,7 @@ const TaskHome = memo(function TaskHome({ title, due, link, type }: TaskHomeProp
                 withCredentials: true,
             }
         );
-        if (resp) {
-            navigate('/home');
-        }
+        
     };
 
     return (
@@ -63,9 +61,11 @@ const TaskHome = memo(function TaskHome({ title, due, link, type }: TaskHomeProp
                         >
                             Complete
                         </button>
+                        <Link to={"/edit/"+link}>
                         <button className="bg-gray-200 hover:bg-gray-300 text-gray-700 font-medium py-1 px-3 rounded">
                             Edit
                         </button>
+                        </Link>
                     </div>
                 ) : (
                     <button

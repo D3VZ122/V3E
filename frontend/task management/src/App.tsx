@@ -8,6 +8,7 @@ import Signupage from "./pages/signup";
 import Home from "./pages/home";
 import Taskadd from "./pages/Addtaskpage";
 import TaskinDetail from "./pages/task";
+import EditTask from "./pages/edit";
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="/home" element={<Home/>}></Route>
           <Route path="/add" element={<Taskadd/>}></Route>
           <Route path="/task/:id" element={<TaskinDetail/>}></Route>
+          <Route path="/edit/:id" element={<EditTask/>}></Route>
         </Routes>
       </BrowserRouter>
     </RecoilRoot>

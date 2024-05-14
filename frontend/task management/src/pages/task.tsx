@@ -2,6 +2,7 @@ import { useNavigate, useParams } from "react-router"
 import Button from "../components/button";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function TaskinDetail() {
   const { id } = useParams();
@@ -41,7 +42,7 @@ export default function TaskinDetail() {
             <p>{task.status === "DONE" ?  new Date(task.completed_at).toLocaleDateString()+"  "+new Date(task.completed_at).toLocaleTimeString():new Date(task.Due_at).toLocaleDateString()+" " +new Date(task.Due_at).toLocaleTimeString()}</p>
           </div>
           {task.status != "DONE" ? <div>  <div className="flex justify-between">
-            <Button name="Edit" size="large" onclick={()=>{}} />
+            <Link to={"/edit/"+id}><Button name="Edit" size="large" onclick={()=>{}} /></Link>
             <Button name="complete" size="large" onclick={async () => {
               const resp = await axios.put(server + "/api/v1/task/tasks/" + id, {
                 status: "DONE"
