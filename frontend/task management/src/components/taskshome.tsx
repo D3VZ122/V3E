@@ -41,6 +41,7 @@ const TaskHome = memo(function TaskHome({ title, due, link, type }: TaskHomeProp
                 withCredentials: true,
             }
         );
+        console.log(resp);
         
     };
 
